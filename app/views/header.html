@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <title>{{.title}}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
-    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-    {{range .moreStyles}}
-      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
-    {{end}}
-    {{range .moreScripts}}
-      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
-    {{end}}
-  </head>
-  <body>
+<!Doctype html><html lang="ja"><head>
+  <meta charset="utf-8">
+  <title>{{.title}}</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+  <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+  <script src="/public/js/jquery-1.11.1.min.js"></script>
+  <script src="/public/js/underscore.min.js"></script>
+  <script src="/public/js/bootstrap.min.js"></script>
+  {{range .moreStyles}}
+    <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+  {{end}}
+  {{range .moreScripts}}
+    <script src="/public/{{.}}"></script>
+  {{end}}
+</head><body>
