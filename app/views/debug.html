@@ -1,21 +1,3 @@
-<style type="text/css">
-	#sidebar {
-		position: absolute;
-		right: 0px;
-		top:69px;
-		max-width: 75%;
-		z-index: 1000;
-		background-color: #fee;
-		border: thin solid grey;
-		padding: 10px;
-	}
-	#toggleSidebar {
-		position: absolute;
-		right: 0px;
-		top: 50px;
-		background-color: #fee;
-	}
-</style>
 <div id="sidebar" style="display:none;">
 	<h4>Available pipelines</h4>
 	<dl>
@@ -41,17 +23,3 @@
 	</dl>
 </div>
 <a id="toggleSidebar" href="#" class="toggles"><i class="icon-chevron-left"></i></a>
-
-<script>
-$(function() {
-  $sidebar = $('#sidebar');
-  $toggleSidebar = $('#toggleSidebar');
-
-  $toggleSidebar.on('click', function(e) {
-    e.preventDefault();
-    $sidebar.toggle();
-    $('i', $toggleSidebar).toggleClass('icon-chevron-left');
-    $('i', $toggleSidebar).toggleClass('icon-chevron-right');
-  });
-});
-</script>

@@ -1,13 +1,18 @@
-<!Doctype html><html lang="ja"><head>
-  <meta charset="utf-8">
+<!Doctype html><html lang="ja"><head><meta charset="utf-8">
+
   <title>{{.title}} - Pin</title>
+  <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+
   <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/public/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
-  <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="/public/css/debug.css">
+
   <script src="/public/js/jquery-1.11.1.min.js"></script>
   <script src="/public/js/underscore.min.js"></script>
   <script src="/public/js/bootstrap.min.js"></script>
+  <script src="/public/js/app.min.js"></script>
+
   {{range .moreStyles}}
     <link rel="stylesheet" type="text/css" href="/public/{{.}}">
   {{end}}
