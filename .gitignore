@@ -1,3 +1,6 @@
 test-results/
 tmp/
 routes/
+.DS_Store
+node_modules
+.sass-cache/

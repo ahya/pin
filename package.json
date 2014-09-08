@@ -1,0 +1,17 @@
+{
+  "name": "pin",
+  "description": "",
+  "author": "funnythingz",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "",
+    "load-grunt-tasks": "",
+    "grunt-typescript": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-compass": "",
+    "grunt-contrib-copy": "",
+    "grunt-open": ""
+  }
+}
