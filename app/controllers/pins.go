@@ -21,5 +21,8 @@ func (c Pins) New() revel.Result {
 
 func (c Pins) Show() revel.Result {
 
+    // TODO: IDを取得して表示してみたい
+    //var id string = c.Params.Get("id")
+
 	return c.Render()
 }
