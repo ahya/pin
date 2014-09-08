@@ -13,7 +13,3 @@ func (c App) Index() revel.Result {
 func (c App) About() revel.Result {
 	return c.Render()
 }
-
-func (c App) New() revel.Result {
-	return c.Render()
-}
