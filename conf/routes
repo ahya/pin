@@ -5,6 +5,12 @@
 module:testrunner
 
 GET     /                                       App.Index
+GET     /about                                  App.About
+
+GET     /pins/                                  Pins.Index
+GET     /pins/new                               Pins.New
+GET     /pins/:id                               Pins.Show
+POST    /pins/:id/:action                       Pins.:action
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
