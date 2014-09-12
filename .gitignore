@@ -5,3 +5,5 @@ routes/
 node_modules
 .sass-cache/
 public/
+app.db
+local
