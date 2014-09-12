@@ -6,12 +6,23 @@ type Pins struct {
 	*revel.Controller
 }
 
+type Pin struct {
+    Title, Memo string
+}
+
 func (c Pins) Index() revel.Result {
 
     revel.TRACE.Printf("%s", c.Params.Get("inputTitle"))
     revel.TRACE.Printf("%s", c.Params.Get("inputMemo"))
 
-	return c.Render()
+    // TODO: sample
+    pinList := []Pin{
+        Pin{Title: "たいとる1", Memo: "めもめも1"},
+        Pin{Title: "たいとる2", Memo: "めもめも2"},
+        Pin{Title: "たいとる3", Memo: "めもめも3"},
+    }
+
+	return c.Render(pinList)
 }
 
 func (c Pins) New() revel.Result {
