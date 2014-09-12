@@ -3,6 +3,8 @@ package controllers
 import (
         "github.com/revel/revel"
         "pin/app/models"
+        "pin/app/viewmodels"
+        _ "log"
        )
 
 type Pins struct {
@@ -15,11 +17,11 @@ func (c Pins) Index() revel.Result {
     revel.TRACE.Printf("%s", c.Params.Get("inputMemo"))
 
     // TODO: sample
-    pinList := []models.Pin{
+    pinList := &viewModels.PinList{[]models.Pin{
         models.Pin{Title: "たいとる1", Memo: "めもめも1"},
         models.Pin{Title: "たいとる2", Memo: "めもめも2"},
         models.Pin{Title: "たいとる3", Memo: "めもめも3"},
-    }
+    }}
 
 	return c.Render(pinList)
 }
