@@ -8,13 +8,13 @@
   </div>
 
   <form role="form" method="post" action="/pins/post">
-    <div class="form-group">
-      <label for="inputTitle">Title</label>
-      <input type="text" name="inputTitle" class="form-control" id="inputTitle" placeholder="title">
+    <div class="form-group{{if .errors.inputTitle}} has-error{{end}}">
+      <label class="control-label" for="inputTitle">Title</label>
+      <input type="text" name="inputTitle" class="form-control" id="inputTitle" placeholder="title" value="{{.flash.inputTitle}}">
     </div>
-    <div class="form-group">
-      <label for="inputMemo">Memo</label>
-      <textarea name="inputMemo" id="inputMemo" class="form-control" rows="3" placeholder="memo"></textarea>
+    <div class="form-group{{if .errors.inputMemo}} has-error{{end}}">
+      <label class="control-label" for="inputMemo">Memo</label>
+      <textarea name="inputMemo" id="inputMemo" class="form-control" rows="3" placeholder="memo">{{.flash.inputMemo}}</textarea>
     </div>
     <div class="form-group text-right">
       <button type="submit" class="btn btn-default btn-primary">Submit</button>
@@ -22,9 +22,5 @@
   </form>
 
 </div><!-- /container -->
-
-<div class="container">
-  {{template "flash.html" .}}
-</div>
 
 {{template "footer.html" .}}

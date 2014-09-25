@@ -35,6 +35,17 @@ func (c Pins) New() revel.Result {
 
 func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 
+	c.Validation.Required(inputTitle)
+	c.Validation.Required(inputMemo)
+
+	if c.Validation.HasErrors() {
+
+		c.Validation.Keep()
+		c.FlashParams()
+
+		return c.Redirect(routes.Pins.New())
+	}
+
 	log.Println(inputTitle, inputMemo)
 
 	return c.Redirect(routes.Pins.Index())
