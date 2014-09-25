@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"log"
 	"pin/app/models"
+	"pin/app/routes"
 	"pin/app/viewmodels"
 
 	"github.com/revel/revel"
@@ -29,6 +31,13 @@ func (c Pins) Index() revel.Result {
 func (c Pins) New() revel.Result {
 
 	return c.Render()
+}
+
+func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
+
+	log.Println(inputTitle, inputMemo)
+
+	return c.Redirect(routes.Pins.Index())
 }
 
 func (c Pins) Show() revel.Result {
