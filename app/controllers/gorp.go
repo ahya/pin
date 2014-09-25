@@ -24,11 +24,13 @@ func InitDB() {
 	DbMap = &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
 
 	// TODO: ここでテーブルを定義する
-	t := DbMap.AddTable(models.Pin{}).SetKeys(true, "Id")
-	t.ColMap("Title").MaxSize = 20
-	t.ColMap("Memo").MaxSize = 140
+	pinTable := DbMap.AddTable(models.Pin{}).SetKeys(true, "Id")
+	pinTable.ColMap("Created")
+	pinTable.ColMap("Title").MaxSize = 20
+	pinTable.ColMap("Memo").MaxSize = 140
 
-	DbMap.DropTables()
+	// TODO: テーブルを全削除する
+	//DbMap.DropTables()
 	DbMap.CreateTables()
 
 }
