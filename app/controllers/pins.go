@@ -37,6 +37,8 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 
 	c.Validation.Required(inputTitle)
 	c.Validation.Required(inputMemo)
+	c.Validation.MaxSize(inputTitle, 20)
+	c.Validation.MaxSize(inputMemo, 140)
 
 	if c.Validation.HasErrors() {
 
