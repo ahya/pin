@@ -9,7 +9,7 @@ GET     /about                                  App.About
 
 GET     /pins/                                  Pins.Index
 GET     /pins/new                               Pins.New
-GET     /pins/post                              Pins.Post
+POST    /pins/post                              Pins.Post
 GET     /pins/:id                               Pins.Show
 POST    /pins/:id/:action                       Pins.:action
 
