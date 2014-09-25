@@ -32,3 +32,8 @@ revel run
 ```
 % revel run pin
 ```
+
+## Doc
+
+- [revel/manual](http://revel.github.io/manual/)
+- [gorp](https://github.com/coopernurse/gorp)
