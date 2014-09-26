@@ -7,7 +7,7 @@
     <h1>New Pin</h1>
   </div>
 
-  <form role="form" method="post" action="/pins/post">
+  <form role="form" method="post" action="/pins/post" enctype="multipart/form-data">
     <div class="form-group{{if .errors.inputTitle}} has-error{{end}}">
       <label class="control-label" for="inputTitle">Title</label>
       <input type="text" name="inputTitle" class="form-control" id="inputTitle" placeholder="title" value="{{.flash.inputTitle}}">
