@@ -2,7 +2,7 @@ module.exports = (grunt)->
 
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask('build', ['clean', 'copy', 'typescript', 'uglify', 'compass'])
+  grunt.registerTask('build', ['clean', 'compass', 'copy', 'typescript', 'uglify'])
   grunt.registerTask('default', ['build', 'open', 'watch'])
 
   grunt.initConfig({
