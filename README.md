@@ -36,4 +36,4 @@ revel run
 ## Doc
 
 - [revel/manual](http://revel.github.io/manual/)
-- [gorp](https://github.com/coopernurse/gorp)
+- [gorm](https://github.com/jinzhu/gorm)
