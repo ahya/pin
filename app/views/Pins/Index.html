@@ -14,7 +14,7 @@
           <a href="{{url "Pins.Show" .Id}}"><img data-src="holder.js/300x300"{{if eq .Image ""}} src="http://dummyimage.com/300x300/f7f8f9/789"{{else}} src="/public/uploads/{{.Image}}"{{end}} alt="{{.Title}}"></a>
           <div class="caption">
             <h3>{{.Title}}</h3>
-            <p>{{.Memo}}</p>
+            <p>{{Truncate .Memo 20}}</p>
             <p class="text-right"><a href="#" class="btn btn-info" role="button" data-method="post" data-pinid="{{.Id}}"><i class="fa fa-thumb-tack fa-fw"></i> pin</a></p>
           </div>
         </div>

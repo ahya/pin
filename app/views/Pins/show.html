@@ -10,7 +10,7 @@
   <figure class="thumbnail">
     <img data-src="holder.js/640x480"{{if eq .pin.Image ""}} src="http://dummyimage.com/640x480/f7f8f9/789"{{else}} src="/public/uploads/{{.pin.Image}}"{{end}} alt="{{.pin.Title}}">
     <figcaption class="caption">
-      <p>{{.pin.Memo}}</p>
+      <p>{{nl2br .pin.Memo}}</p>
     </figcaption>
   </figure>
 

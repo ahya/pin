@@ -1,6 +1,21 @@
 package app
 
-import "github.com/revel/revel"
+import (
+	"github.com/revel/revel"
+	"unicode/utf8"
+)
+
+func truncate(s string, length int) string {
+
+	if length < utf8.RuneCountInString(s) {
+		trimmed := []rune(s)[0:length]
+		trimmed[length-1] = '…'
+
+		return string(trimmed)
+	}
+
+	return s
+}
 
 func init() {
 	// Filters is the default set of global filters.
@@ -23,6 +38,8 @@ func init() {
 	// ( order dependent )
 	// revel.OnAppStart(InitDB)
 	// revel.OnAppStart(FillCache)
+
+	revel.TemplateFuncs["Truncate"] = truncate
 }
 
 // TODO turn this into revel.HeaderFilter
