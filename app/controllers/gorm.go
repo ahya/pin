@@ -23,10 +23,22 @@ func InitDB() {
 	models.DB.SingularTable(true)
 }
 
-func Migrate() {
-    // Pin
+func Create() {
 	models.DB.CreateTable(&models.Pin{})
+}
+
+func Drop() {
 	//models.DB.DropTable(&models.Pin{})
 	models.DB.DropTableIfExists(&models.Pin{})
+}
+
+func Reset() {
+	models.DB.DropTable(&models.Pin{})
+	models.DB.CreateTable(&models.Pin{})
+	models.DB.DropTableIfExists(&models.Pin{})
+	models.DB.AutoMigrate(&models.Pin{})
+}
+
+func Migrate() {
 	models.DB.AutoMigrate(&models.Pin{})
 }
