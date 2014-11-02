@@ -98,12 +98,9 @@ func (c Pins) Show(id string) revel.Result {
 
     pin := models.Pin{}.Find_by_id(id)
 
-    //TODO: not found
-    /**
-    if pin == nil {
+    if pin.Id == 0 {
         return c.NotFound("Pin %d does not exist", id)
     }
-    /**/
 
     log.Println(pin)
 
