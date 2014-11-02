@@ -9,7 +9,6 @@ import (
 
 	"pin/app/models"
 	"pin/app/routes"
-	"pin/app/viewmodels"
 
 	"github.com/revel/revel"
 )
@@ -24,9 +23,9 @@ func (c Pins) Index() revel.Result {
 	revel.TRACE.Printf("%s", c.Params.Get("inputMemo"))
 
     var pins []models.Pin
-    DB.Find(&pins)
+    models.DB.Find(&pins)
 
-    pinList := viewModels.PinList{Pins: pins}
+    pinList := models.PinList{Pins: pins}
 
     log.Println(pins)
     log.Println(pinList)
@@ -92,9 +91,9 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 
 	log.Println(inputTitle, inputMemo, outImageName)
     pin := models.Pin{Created: time.Now().UnixNano(), Title: inputTitle, Memo: inputMemo, Image: outImageName}
-	log.Println(DB.NewRecord(pin))
-    log.Println(DB.Create(&pin))
-	log.Println(DB.Save(&pin))
+	log.Println(models.DB.NewRecord(pin))
+    log.Println(models.DB.Create(&pin))
+	log.Println(models.DB.Save(&pin))
 
 	return c.Redirect(routes.Pins.Index())
 }

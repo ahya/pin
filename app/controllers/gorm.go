@@ -11,26 +11,22 @@ import (
 	_ "github.com/revel/revel"
 )
 
-var (
-    DB gorm.DB
-)
-
 func InitDB() {
-    DB, _ = gorm.Open("mysql", "hoge:hoge@/pin?charset=utf8&parseTime=True")
+    models.DB, _ = gorm.Open("mysql", "hoge:hoge@/pin?charset=utf8&parseTime=True")
 
-	DB.DB()
+	models.DB.DB()
 
-	DB.DB().Ping()
-	DB.DB().SetMaxIdleConns(10)
-	DB.DB().SetMaxOpenConns(100)
+	models.DB.DB().Ping()
+	models.DB.DB().SetMaxIdleConns(10)
+	models.DB.DB().SetMaxOpenConns(100)
 
-	DB.SingularTable(true)
+	models.DB.SingularTable(true)
 }
 
 func Migrate() {
     // Pin
-	DB.CreateTable(&models.Pin{})
-	//DB.DropTable(&models.Pin{})
-	DB.DropTableIfExists(&models.Pin{})
-	DB.AutoMigrate(&models.Pin{})
+	models.DB.CreateTable(&models.Pin{})
+	//models.DB.DropTable(&models.Pin{})
+	models.DB.DropTableIfExists(&models.Pin{})
+	models.DB.AutoMigrate(&models.Pin{})
 }

@@ -4,10 +4,9 @@
 
 module:testrunner
 
-GET     /                                       App.Index
+GET     /                                       Pins.Index
 GET     /about                                  App.About
 
-GET     /pins/                                  Pins.Index
 GET     /pins/new                               Pins.New
 POST    /pins/post                              Pins.Post
 GET     /pins/:id                               Pins.Show
