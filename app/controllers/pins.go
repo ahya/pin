@@ -22,9 +22,9 @@ func (c Pins) Index() revel.Result {
 	revel.TRACE.Printf("%s", c.Params.Get("inputTitle"))
 	revel.TRACE.Printf("%s", c.Params.Get("inputMemo"))
 
-    pinView := models.Pin{}.All()
+	pinView := models.Pin{}.All()
 
-    log.Println(pinView)
+	log.Println(pinView)
 
 	return c.Render(pinView)
 }
@@ -86,9 +86,9 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 	}
 
 	log.Println(inputTitle, inputMemo, outImageName)
-    pin := models.Pin{Created: time.Now().UnixNano(), Title: inputTitle, Memo: inputMemo, Image: outImageName}
+	pin := models.Pin{Created: time.Now().UnixNano(), Title: inputTitle, Memo: inputMemo, Image: outImageName}
 	log.Println(models.DB.NewRecord(pin))
-    log.Println(models.DB.Create(&pin))
+	log.Println(models.DB.Create(&pin))
 	log.Println(models.DB.Save(&pin))
 
 	return c.Redirect(routes.Pins.Index())
@@ -96,13 +96,13 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 
 func (c Pins) Show(id string) revel.Result {
 
-    pin := models.Pin{}.Find_by_id(id)
+	pin := models.Pin{}.Find_by_id(id)
 
-    if pin.Id == 0 {
-        return c.NotFound("Pin %d does not exist", id)
-    }
+	if pin.Id == 0 {
+		return c.NotFound("Pin %d does not exist", id)
+	}
 
-    log.Println(pin)
+	log.Println(pin)
 
 	return c.Render(pin)
 }

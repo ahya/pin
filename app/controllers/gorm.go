@@ -3,8 +3,8 @@ package controllers
 import (
 	"pin/app/models"
 
-	"github.com/jinzhu/gorm"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
 
@@ -12,7 +12,7 @@ import (
 )
 
 func InitDB() {
-    models.DB, _ = gorm.Open("mysql", "hoge:hoge@/pin?charset=utf8&parseTime=True")
+	models.DB, _ = gorm.Open("mysql", "hoge:hoge@/pin?charset=utf8&parseTime=True")
 
 	models.DB.DB()
 
