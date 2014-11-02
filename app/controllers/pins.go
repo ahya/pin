@@ -94,9 +94,22 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 	return c.Redirect(routes.Pins.Index())
 }
 
-func (c Pins) Show() revel.Result {
+func (c Pins) Show(id string) revel.Result {
 
-	id := c.Params.Route["id"][0]
+    pin := models.Pin{}.Find_by_id(id)
 
-	return c.Render(id)
+    //TODO: not found
+    /**
+    if pin == nil {
+        return c.NotFound("Pin %d does not exist", id)
+    }
+    /**/
+
+    log.Println(pin)
+
+	return c.Render(pin)
+}
+
+func (c Pins) Favorites() revel.Result {
+	return c.Render()
 }

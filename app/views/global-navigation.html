@@ -1,24 +1,25 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#global-navigation-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand logo" href="{{url "Pins.Index"}}">Pin</a>
-    </div>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#global-navigation-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="{{url "Pins.Index"}}">Pin</a>
+      </div>
 
-    <div class="collapse navbar-collapse" id="global-navigation-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="{{url "Pins.New"}}">New</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{url "App.About"}}">About</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="global-navigation-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="{{url "Pins.New"}}">New</a></li>
+          <li><a href="{{url "Pins.Favorites"}}">Favorites</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{url "App.About"}}">About</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
   </div>
 </nav>

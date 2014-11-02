@@ -12,3 +12,11 @@ func (p Pin) All() PinView {
 
     return PinView{Pins: pins}
 }
+
+func (p Pin) Find_by_id(id string) Pin {
+
+    var pin Pin
+    DB.First(&pin, id)
+
+    return pin
+}
