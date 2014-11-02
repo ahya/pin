@@ -1,15 +1,7 @@
 package models
 
 import (
-
     "log"
-
-	"github.com/jinzhu/gorm"
-	_ "github.com/go-sql-driver/mysql"
-)
-
-var (
-    DB gorm.DB
 )
 
 type Pin struct {
