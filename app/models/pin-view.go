@@ -1,5 +1,5 @@
 package models
 
-type PinList struct {
+type PinView struct {
     Pins []Pin
 }

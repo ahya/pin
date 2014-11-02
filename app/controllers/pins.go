@@ -22,15 +22,11 @@ func (c Pins) Index() revel.Result {
 	revel.TRACE.Printf("%s", c.Params.Get("inputTitle"))
 	revel.TRACE.Printf("%s", c.Params.Get("inputMemo"))
 
-    var pins []models.Pin
-    models.DB.Find(&pins)
+    pinView := models.Pin{}.All()
 
-    pinList := models.PinList{Pins: pins}
+    log.Println(pinView)
 
-    log.Println(pins)
-    log.Println(pinList)
-
-	return c.Render(pinList)
+	return c.Render(pinView)
 }
 
 func (c Pins) New() revel.Result {
