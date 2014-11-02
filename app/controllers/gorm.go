@@ -30,7 +30,7 @@ func InitDB() {
 func Migrate() {
     // Pin
 	DB.CreateTable(&models.Pin{})
-	DB.DropTable(&models.Pin{})
+	//DB.DropTable(&models.Pin{})
 	DB.DropTableIfExists(&models.Pin{})
 	DB.AutoMigrate(&models.Pin{})
 }

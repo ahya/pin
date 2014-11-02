@@ -9,7 +9,7 @@ import (
 
 	"pin/app/models"
 	"pin/app/routes"
-	_ "pin/app/viewmodels"
+	"pin/app/viewmodels"
 
 	"github.com/revel/revel"
 )
@@ -25,9 +25,13 @@ func (c Pins) Index() revel.Result {
 
     var pins []models.Pin
     DB.Find(&pins)
-    log.Println(pins)
 
-	return c.Render(pins)
+    pinList := viewModels.PinList{Pins: pins}
+
+    log.Println(pins)
+    log.Println(pinList)
+
+	return c.Render(pinList)
 }
 
 func (c Pins) New() revel.Result {

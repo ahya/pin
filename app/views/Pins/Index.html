@@ -8,7 +8,7 @@
 
     <div class="row">
 
-      {{range .pinListViewModel.Pins}}
+      {{range .pinList.Pins}}
       <div class="col-sm-6 col-md-4 col-lg-3" id="pin-{{.Id}}">
         <div class="thumbnail">
           <img data-src="holder.js/300x300"{{if eq .Image ""}} src="http://dummyimage.com/300x300/f7f8f9/789"{{else}} src="/public/uploads/{{.Image}}"{{end}} alt="...">
