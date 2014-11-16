@@ -81,7 +81,6 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 				break
 			}
 		}
-		log.Println(image)
 		writer.Flush()
 	} else {
 		log.Println("Image is empty")
