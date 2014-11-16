@@ -55,6 +55,7 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 	if c.Params.Files["upImage"] != nil {
 
 		upImage := c.Params.Files["upImage"][0]
+		log.Println(upImage)
 		outImageName = fmt.Sprintf("%d", time.Now().UnixNano()) + ".jpg"
 
 		outImage, err := os.Create("./public/uploads/" + outImageName)
@@ -80,6 +81,7 @@ func (c Pins) Post(inputTitle string, inputMemo string) revel.Result {
 				break
 			}
 		}
+		log.Println(image)
 		writer.Flush()
 	} else {
 		log.Println("Image is empty")
